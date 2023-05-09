@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: crossplane-compositions
+  namespace: crossplane-system
+spec:
+  project: default
+  source:
+    repoURL: 'https://gitlab.ingress.o2b.com.br//planktron/marketplace-templates.git'
+    path: o2b-crossplane-compositions/compositions
+    targetRevision: prod
+  destination:
+    namespace: crossplane-system
+    server: https://kubernetes.default.svc
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
