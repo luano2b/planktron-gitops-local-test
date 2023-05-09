@@ -1,0 +1,9 @@
+apiVersion: v2
+name: vcluster
+description: vcluster - Virtual Kubernetes Clusters
+type: application
+version: 0.15.0
+dependencies:
+- name: vcluster
+  version: 0.15.0
+  repository: https://charts.loft.sh
