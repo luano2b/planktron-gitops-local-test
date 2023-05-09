@@ -1,0 +1,76 @@
+# ---
+# apiVersion: pkg.crossplane.io/v1
+# kind: Provider
+# metadata:
+#   name: provider-azure-upbound
+# spec:
+#   package: xpkg.upbound.io/upbound/provider-azure:v0.29.0
+
+# ---
+# apiVersion: pkg.crossplane.io/v1
+# kind: Provider
+# metadata:
+#   name: provider-azure
+# spec:
+#   package: xpkg.upbound.io/crossplane-contrib/provider-azure:v0.20.0
+
+# ---
+# apiVersion: pkg.crossplane.io/v1
+# kind: Provider
+# metadata:
+#   name: provider-aws
+# spec:
+#   package: xpkg.upbound.io/crossplane-contrib/provider-aws:v0.38.0
+
+# ---
+# apiVersion: pkg.crossplane.io/v1
+# kind: Provider
+# metadata:
+#   name: provider-aws-upbound
+# spec:
+#   package: xpkg.upbound.io/upbound/provider-aws:v0.33.0
+
+# ---
+# apiVersion: pkg.crossplane.io/v1alpha1
+# kind: ControllerConfig
+# metadata:
+#   name: debug-config
+# spec:
+#   args:
+#     - --debug
+
+# ---
+# apiVersion: pkg.crossplane.io/v1
+# kind: Provider
+# metadata:
+#   name: provider-gcp-upbound
+# spec:
+#   package: xpkg.upbound.io/upbound/provider-gcp:v0.29.0
+#   controllerConfigRef:
+#     name: debug-config
+
+# ---
+# apiVersion: pkg.crossplane.io/v1
+# kind: Provider
+# metadata:
+#   name: provider-gcp
+# spec:
+#   package: xpkg.upbound.io/crossplane-contrib/provider-gcp:v0.22.0
+#   controllerConfigRef:
+#     name: debug-config
+
+---
+apiVersion: pkg.crossplane.io/v1
+kind: Provider
+metadata:
+  name: provider-kubernetes
+spec:
+  package: xpkg.upbound.io/crossplane-contrib/provider-kubernetes:v0.7.0
+
+---
+apiVersion: pkg.crossplane.io/v1
+kind: Provider
+metadata:
+  name: provider-terraform
+spec:
+  package: xpkg.upbound.io/upbound/provider-terraform:v0.5.0
